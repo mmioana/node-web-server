@@ -19,9 +19,8 @@ app.use((req, res, next) => {
 });
 
 app.use((req, res, next) => {
-    res.render('maintenance.hbs');
+    // res.render('maintenance.hbs');
     next();
-
 });
 
 hbs.registerHelper('getCurrentYear', () => {
@@ -39,6 +38,13 @@ app.get('/', (request, response) => {
 app.get('/about', (request, response) => {
     response.render('about.hbs', {
         title: 'About Page'
+    });
+});
+
+app.get('/projects', (request, response) => {
+    response.render('portfolio.hbs', {
+        title: 'Portfolio Page',
+        projects: ['Recipes Manager', 'Weather app']
     });
 });
 
